@@ -19,8 +19,9 @@ plugins:
 social-network-links:
   email: "maria.demy.swe@gmail.com"
   github: maria-demy
+  instagram: bashdemy
+  linkedin: maria-demy-0b7b17159
   # hackerrank:
-  # instagram: bashdemy
 
 share-links-active:
   linkedin: true

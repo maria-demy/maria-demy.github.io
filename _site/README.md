@@ -19,6 +19,10 @@ To run this portfolio locally, you'll need to have Ruby and Bundler installed on
 
     bundle exec jekyll serve
 
+# Deployment
+
+The portfolio is hosted using GitHub Pages, which automatically builds and deploys the website from the main branch.
+
 ## License
 
 This project is open source and available under the MIT License.
