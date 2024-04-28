@@ -1,0 +1,16 @@
+title: Maria Demy | Software Engineer
+email: maria.demy.swe@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Full Stack Developer with 3 years of experience in building and maintaining responsive websites in the financial industry. Proficient in HTML, CSS, JavaScript; plus modern libraries and frameworks like React and Spring Boot.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://maria-demy.github.io"
+
+remote_theme: daattali/beautiful-jekyll
+
+plugins:
+  - jekyll-remote-theme
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
