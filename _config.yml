@@ -7,8 +7,35 @@ url: "https://maria-demy.github.io"
 
 remote_theme: daattali/beautiful-jekyll
 
+navbar-links:
+  Home: "/"
+  About Me: "/about/"
+  Projects: "/projects/"
+  Contact: "/contact/"
+
 plugins:
   - jekyll-remote-theme
+
+social-network-links:
+  email: "maria.demy.swe@gmail.com"
+  github: maria-demy
+  # hackerrank:
+  # instagram: bashdemy
+
+share-links-active:
+  linkedin: true
+
+page-col: "#FFFFFF" # White background for pages, clean and neutral
+text-col: "#333333" # Dark grey for general text, enhances readability
+link-col: "#007BFF" # Bright blue for links, vibrant and noticeable
+hover-col: "#0056b3" # Darker blue for link hover states, provides good contrast
+navbar-col: "#F0F0F0" # Very light grey for the navbar background, subtle and elegant
+navbar-text-col: "#333333" # Dark grey for navbar text, consistent with general text color
+navbar-border-col: "#CCCCCC" # Light grey for navbar borders, separates navbar from content
+footer-col: "#F0F0F0" # Matches navbar background for consistency
+footer-text-col: "#666666" # Slightly lighter grey than text, softens the footer's impact
+footer-link-col: "#007BFF" # Same as link color for consistency
+footer-hover-col: "#0056b3" # Same as hover color for consistency
 
 collections:
   pages:
