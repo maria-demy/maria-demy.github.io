@@ -7,6 +7,7 @@ Welcome to the GitHub repository for my personal portfolio website. This site sh
 To run this portfolio locally, you'll need to have Ruby and Bundler installed on your system. Then, you can clone this repository and perform the following steps:
 
 1. **Clone the repository**:
+   
    git clone https://github.com/maria-demy/maria-demy.github.io.git
    cd maria-demy.github.io
 
