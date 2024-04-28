@@ -1,6 +1,5 @@
 ---
-layout: page
-title: Contact Me
+layout: default
 permalink: /contact/
 ---
 
