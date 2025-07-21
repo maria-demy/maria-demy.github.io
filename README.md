@@ -24,17 +24,20 @@ A modern, responsive personal portfolio website built with React, Vite, and Tail
 ## 📦 Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/maria-demy/maria-demy.github.io.git
    cd maria-demy.github.io
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -92,6 +95,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Bazhena Dementyeva**
+
 - Software Engineer based in Sydney, Australia
 - Specializing in modern web development
 - Passionate about creating elegant, user-friendly applications
