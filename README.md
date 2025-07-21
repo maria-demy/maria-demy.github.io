@@ -1,28 +1,140 @@
-# Maria Demy's Portfolio
+# Maria Demy - Personal Portfolio
 
-Welcome to the GitHub repository for my personal portfolio website. This site showcases my work as a Software Engineer, with experience in full-stack development, including front-end technologies like React and JavaScript, and back-end development using Spring Boot and Java.
+A modern, privacy-first personal portfolio website built with React, Vite, and Tailwind CSS.
 
-## Local Development
+## 🎨 Features
 
-To run this portfolio locally, you'll need to have Ruby and Bundler installed on your system. Then, you can clone this repository and perform the following steps:
+- **Clean, Modern Design**: Light pink theme with subtle flower pattern background
+- **Responsive Layout**: Optimized for both desktop and mobile devices
+- **Privacy-First**: No tracking, analytics, or personal data collection
+- **Smooth Navigation**: Fixed navbar with smooth scrolling between sections
+- **Professional Sections**: About, Apps, Blog, and Contact sections
 
-1. **Clone the repository**:
-   
-   git clone https://github.com/maria-demy/maria-demy.github.io.git
-   cd maria-demy.github.io
+## 🛠️ Tech Stack
 
-2. **Install Jekyll and other dependencies from the GitHub Pages gem:**
+- **Frontend**: React 18 with Vite
+- **Styling**: Tailwind CSS with custom pink theme
+- **Fonts**: Inter (Google Fonts)
+- **Deployment**: GitHub Pages
+- **Build Tool**: Vite
 
-    bundle install
+## 🚀 Getting Started
 
-3. **Run the Jekyll site locally:**
+### Prerequisites
 
-    bundle exec jekyll serve
+- Node.js (v18 or higher)
+- npm or yarn
 
-# Deployment
+### Installation
 
-The portfolio is hosted using GitHub Pages, which automatically builds and deploys the website from the main branch.
+1. Clone the repository:
+```bash
+git clone https://github.com/maria-demy/maria-demy.github.io.git
+cd maria-demy.github.io
+```
 
-## License
+2. Install dependencies:
+```bash
+npm install
+```
 
-This project is open source and available under the MIT License.
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## 📦 Project Structure
+
+```
+maria-demy.github.io/
+├── public/                 # Static assets
+├── src/
+│   ├── components/         # React components
+│   │   ├── About.jsx      # About section
+│   │   ├── Apps.jsx       # Applications section
+│   │   ├── Blog.jsx       # Blog posts section
+│   │   ├── Contact.jsx    # Contact section
+│   │   ├── Footer.jsx     # Footer component
+│   │   └── Navbar.jsx     # Navigation component
+│   ├── App.jsx            # Main app component
+│   ├── main.jsx           # App entry point
+│   └── index.css          # Global styles with Tailwind
+├── index.html              # HTML template
+├── package.json            # Dependencies and scripts
+├── tailwind.config.js      # Tailwind configuration
+├── vite.config.js          # Vite configuration
+└── README.md              # This file
+```
+
+## 🌐 Deployment
+
+### GitHub Pages
+
+This project is configured for GitHub Pages deployment:
+
+1. Push your changes to the main branch
+2. GitHub Actions will automatically build and deploy the site
+3. The site will be available at `https://maria-demy.github.io`
+
+### Manual Deployment
+
+If you prefer manual deployment:
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to your web server
+
+## 🎨 Customization
+
+### Colors and Theme
+
+The site uses a custom pink color palette defined in `tailwind.config.js`. You can modify the colors by updating the `pink` color object.
+
+### Content
+
+- **About Section**: Update the skills and strengths in `src/components/About.jsx`
+- **Apps Section**: Add your projects in `src/components/Apps.jsx`
+- **Blog Section**: Add blog posts in `src/components/Blog.jsx`
+- **Contact Section**: Update contact information in `src/components/Contact.jsx`
+
+### Background Pattern
+
+The flower pattern background is defined as an SVG data URL in `src/index.css`. You can modify or replace this pattern as needed.
+
+## 🔒 Privacy
+
+This site is built with privacy in mind:
+
+- No analytics or tracking scripts
+- No cookies or local storage for tracking
+- No external dependencies that could track users
+- All assets are self-hosted or from trusted CDNs
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Contact
+
+For questions or collaboration opportunities, please reach out through the contact information provided on the website.
+
+---
+
+Built with ❤️ and ☕ by Maria Demy
