@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const SEO = ({
@@ -25,31 +25,77 @@ const SEO = ({
   const fullUrl = url || 'https://maria-demy.github.io/';
   const fullImage = image || 'https://maria-demy.github.io/profile-picture.JPG';
 
-  return (
-    <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={fullDescription} />
-      <meta name="keywords" content={fullKeywords} />
+  useEffect(() => {
+    // Update document title
+    document.title = fullTitle;
 
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={fullDescription} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:image" content={fullImage} />
-      <meta property="og:type" content={type} />
+    // Update meta tags
+    const updateMetaTag = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
 
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={fullDescription} />
-      <meta name="twitter:image" content={fullImage} />
+    const updatePropertyTag = (property, content) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
 
-      <link rel="canonical" href={fullUrl} />
+    // Update meta tags
+    updateMetaTag('description', fullDescription);
+    updateMetaTag('keywords', fullKeywords);
 
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      )}
-    </Helmet>
-  );
+    // Update Open Graph tags
+    updatePropertyTag('og:title', fullTitle);
+    updatePropertyTag('og:description', fullDescription);
+    updatePropertyTag('og:url', fullUrl);
+    updatePropertyTag('og:image', fullImage);
+    updatePropertyTag('og:type', type);
+
+    // Update Twitter tags
+    updatePropertyTag('twitter:title', fullTitle);
+    updatePropertyTag('twitter:description', fullDescription);
+    updatePropertyTag('twitter:image', fullImage);
+
+    // Update canonical link
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', fullUrl);
+
+    // Add structured data if provided
+    if (structuredData) {
+      let script = document.querySelector('script[type="application/ld+json"]');
+      if (!script) {
+        script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(structuredData);
+    }
+  }, [
+    fullTitle,
+    fullDescription,
+    fullKeywords,
+    fullUrl,
+    fullImage,
+    type,
+    structuredData,
+  ]);
+
+  return null; // This component doesn't render anything
 };
 
 SEO.propTypes = {

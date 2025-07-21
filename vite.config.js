@@ -14,7 +14,6 @@ export default defineConfig({
         entryFileNames: 'assets/[name]-[hash].js',
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          utils: ['react-helmet-async'],
         },
       },
     },
