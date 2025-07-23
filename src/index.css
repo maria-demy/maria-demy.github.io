@@ -146,4 +146,26 @@
   .border-theme-primary {
     border-color: var(--color-primary);
   }
+
+  /* Floating Flowers Animation */
+  .floating-flower {
+    animation: float linear infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate(-50%, -50%) translateY(0vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.4;
+    }
+    90% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
 }

@@ -1,53 +1,19 @@
-import { useCallback } from 'react';
-import { loadSlim } from '@tsparticles/slim';
-import Particles from '@tsparticles/react';
+import { useState, useEffect } from 'react';
 
 const FloatingFlowers = () => {
-  const particlesInit = useCallback(async engine => {
-    await loadSlim(engine);
-  }, []);
+  const [flowers, setFlowers] = useState([]);
 
-  const particlesConfig = {
-    particles: {
-      color: {
-        value: '#D9A6B3',
-      },
-      move: {
-        enable: true,
-        speed: 1.5,
-      },
-      number: {
-        value: 50,
-      },
-      opacity: {
-        value: 0.7,
-      },
-      shape: {
-        type: 'char',
-        character: {
-          value: '🌸',
-          font: 'Verdana',
-          style: '',
-          weight: '400',
-          fill: true,
-        },
-      },
-      size: {
-        value: 12,
-      },
-      rotate: {
-        value: {
-          min: 0,
-          max: 360,
-        },
-        direction: 'random',
-        animation: {
-          enable: true,
-          speed: 5,
-        },
-      },
-    },
-  };
+  useEffect(() => {
+    const newFlowers = Array.from({ length: 20 }, (_, index) => ({
+      id: index,
+      x: Math.random() * 100,
+      y: Math.random() * 80,
+      delay: Math.random() * 15,
+      duration: 20 + Math.random() * 15,
+      size: 40 + Math.random() * 30,
+    }));
+    setFlowers(newFlowers);
+  }, []);
 
   return (
     <div
@@ -59,18 +25,30 @@ const FloatingFlowers = () => {
         height: 'calc(100vh - 80px)',
         zIndex: -1,
         pointerEvents: 'none',
+        overflow: 'hidden',
       }}
       aria-hidden="true"
     >
-      <Particles
-        id="floating-flowers"
-        init={particlesInit}
-        options={particlesConfig}
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
-      />
+      {flowers.map(flower => (
+        <div
+          key={flower.id}
+          className="floating-flower"
+          style={{
+            position: 'absolute',
+            left: `${flower.x}%`,
+            top: `${flower.y}%`,
+            fontSize: `${flower.size}px`,
+            animationDuration: `${flower.duration}s`,
+            animationDelay: `${flower.delay}s`,
+            opacity: 0.4,
+            color: '#D9A6B3',
+            transform: 'translate(-50%, -50%)',
+            filter: 'blur(0.5px)',
+          }}
+        >
+          🌸
+        </div>
+      ))}
     </div>
   );
 };
